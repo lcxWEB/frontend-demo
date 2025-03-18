@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input</title>
+</head>
+<body>
+    <form action="register.php" method="post">
+        <!-- text文本框，用户可以看见输入的内容 -->
+         <!-- maxlength用的少，一般用正则表达式限制 -->
+        用户名：<input type="text" name="username" value="请输入用户名" maxlength="10"> <br>
+        <!-- password密码框，用户看不见输入的密码 -->
+        密码：<input type="password" name="password"> <br>
+        <!-- radio单选框，用户只能选择一个，name要一样 -->
+        婚姻状况：
+        <input type="radio" name="marriage" value="married" id="marriage"><label for="marriage">已婚</label>
+        <input type="radio" name="marriage" value="unmarried" id="unmarried"><label for="unmarried">未婚</label> <br>
+        <!-- checkbox复选框，用户可以选择多个，name要一样 -->
+        爱好：<input type="checkbox" name="hobby" value="basketball" checked>篮球
+        <input type="checkbox" name="hobby" value="football" id="football"><label for="football">足球</label>
+        <input type="checkbox" name="hobby" value="pingpong">乒乓球
+        <input type="checkbox" name="hobby" value="badminton">羽毛球 <br>
+
+        <!-- number数字框，用户只能输入数字 -->
+        年龄：<input type="number" name="age" min="0" max="150"> <br>
+        <!-- range范围框，用户可以拖动选择一个范围 -->
+        身高：<input type="range" name="height" min="0" max="300"> <br>
+        <!-- date日期框，用户可以选择日期 -->
+        生日：<input type="date" name="birthday"> <br>
+        <!-- time时间框，用户可以选择时间 -->
+        时间：<input type="time" name="time"> <br>
+
+        <!-- color颜色选择框，用户可以选择颜色 -->
+        喜欢的颜色：<input type="color" name="color"> <br>
+        <!-- email邮箱框，用户输入的内容要符合邮箱格式 -->
+        邮箱：<input type="email" name="email"> <br>
+        <!-- url网址框，用户输入的内容要符合网址格式 -->
+        网址：<input type="url" name="url"> <br>
+        <!-- tel电话框，用户输入的内容要符合电话格式 -->
+        电话：<input type="tel" name="tel"> <br>
+        <!-- 普通按钮经常与JS搭配使用 -->
+        <input type="button" value="点击获取验证码"> <br>
+        <!-- search搜索框，用户输入的内容要符合搜索格式 -->
+        搜索：<input type="search" name="search"> <br>
+
+        <!-- textarea文本域，用户可以看见输入的内容 -->
+         <!-- cols和rows很少用，一般用CSS实现 -->
+        个人简介：<textarea name="intro" cols="30" rows="10"></textarea> <br>
+        <!-- hidden隐藏域，用户看不见，但是可以提交 -->
+        
+        <!-- select下拉框，用户可以选择一个 -->
+        城市：
+        <select name="city">
+            <option value="beijing">北京</option>
+            <option value="shanghai" selected>上海</option>
+            <option value="guangzhou">广州</option>
+            <option value="shenzhen">深圳</option>
+        </select> <br>
+        <!-- file文件上传框，用户可以上传文件 -->
+        <input type="file" name="file"> <br>
+        
+
+        <!-- reset重置按钮，用户点击后重置表单 -->
+        <input type="reset" value="重置">
+
+        <!-- submit提交按钮，用户点击后提交表单 -->
+        <input type="submit" value="提交">
+
+    </form>
+</body>
+</html>
