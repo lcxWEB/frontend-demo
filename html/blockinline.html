@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Block Element</title>
+    <style>
+        /* 块元素 */
+        /* 独占一行 */
+        /* 可以设置高度、宽度、外边距以及内边距 */
+        /* 宽度默认是容器（父级元素）宽度的100% */
+        /* 是一个容器及盒子，里面可以放行内或者块级元素 */
+        /* !!!文字类的元素不能使用块级元素：如<p> <h1>~<h6> */
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+
+        /* 行内元素，内联元素：<span> <a> <strong> <b> <em> <i> */
+        /* 不会独占一行 */
+        /* 不能设置宽度、高度、外边距以及内边距 */
+        /* 宽度和高度由内容撑开 */
+        /* 只能容纳文本或者其他行内元素 */
+        /* !!!链接里不能再放链接，但是a里面能放块级元素，但是给<a>转换一下块级模式最安全 */
+        span {
+            display: inline-block; /* 转换为行内块级元素，巧妙利用 */
+            width: 100px;
+            height: 100px;
+            background-color: #84e0d5;
+        }
+
+        /* 行内块元素 */
+        /* 既有行内元素的特点，又有块级元素的特点：<img> <input> <td> */
+        /* 和相邻行内元素（行内块）在一行上，有空白缝隙，一行可以显示多个（行内元素特点） */
+        /* 默认宽度就是它内容本身的宽度（行内元素特点） */
+        /* 可以设置宽度、高度、外边距以及内边距（块级元素特点） */
+        img {
+            width: 100px;
+            height: 100px;
+        }
+        
+        a {
+            display: block; /* 转换为块级元素,用得最多 */
+            width: 100px;
+            height: 100px;
+            background-color: #f0f;
+        }
+
+        .inlinediv {
+            /* display: inline-block; */
+            display: inline;
+            width: 100px;
+            height: 100px;
+            background-color: rgb(13, 255, 0);
+            /* padding: 0; */
+            /* margin: 0; */
+        }
+
+    </style>
+</head>
+<body>
+
+    <div>比较霸道，独占一行</div>
+    <!-- <p>
+        <div>有问题</div>
+    </p> -->
+
+    <div class="inlinediv">我是块级元素</div>
+
+    <span>比较温柔，不独占一行
+        <!-- <a href="#">link</a> -->
+    </span>
+    <strong>strong</strong>
+
+    <img src="https://www.baidu.com/img/bd_logo1.png" alt="">
+    <input type="text" value="input">
+    <td>td</td>
+
+    <!-- 给<a>增加触发范围 -->
+    <a href="#">林肯</a>
+
+</body>
+</html>

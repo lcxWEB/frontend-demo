@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Css Selector</title>
+    <style>
+        /* 后代选择器：元素1 元素2 { 样式声明 }，元素2可以是儿子，也可以是孙子，只要是元素1的后代即可 */
+        ol li {
+            color: red;
+        }
+        ol li a {
+            /* text-align: center; */
+            text-decoration: none;
+            color: pink;
+        }
+
+        .nav li a {
+            color: green;
+        }
+
+        /* 子选择器：某元素的最近一级 */
+        .nav > a {
+            color: peachpuff;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <ol>
+        <li>我是ol的孩子</li>
+        <li>我是ol的孩子</li>
+        <li>我是ol的孩子</li>
+        <li>我是ol的孩子</li>
+        <li>我是ol的孩子</li>
+        <li><a href="#">孙子</a></li>
+    </ol>
+
+    <ul>
+        <li>ul的孩子</li>
+        <li>ul的孩子</li>
+        <li>ul的孩子</li>
+        <li>ul的孩子</li>
+        <li>ul的孩子</li>
+        <li><a href="#">不会改变的</a></li>
+        <li><a href="#">不会改变的</a></li>
+        <li><a href="#">不会改变的</a></li>
+        <li><a href="#">不会改变的</a></li>
+        <li><a href="#">不会改变的</a></li>
+    </ul>
+
+    <ul class="nav">
+        <li>ul的孩子</li>
+        <li>ul的孩子</li>
+        <li>ul的孩子</li>
+        <li>ul的孩子</li>
+        <li>ul的孩子</li>
+        <li><a href="#">不会改变的</a></li>
+        <li><a href="#">不会改变的</a></li>
+        <li><a href="#">不会改变的</a></li>
+        <li><a href="#">不会改变的</a></li>
+        <li><a href="#">不会改变的</a></li>
+    </ul>
+
+    <div class="nav">
+        <a href="#">儿子</a>
+        <p>
+            <a href="#">孙子</a>
+        </p>
+    </div>
+    
+</body>
+</html>
