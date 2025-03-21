@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>background</title>
+    <style>
+        /* background-image: 描述了元素的背景图像，常见于logo或者一些装饰性的小图片或者是超大的背景图片，优点是非常 */
+        div {
+            width: 300px;
+            height: 300px;
+            background-image: url('./images/logo.png');
+            /* background-size: cover; */
+            /* background-position参数是方位名词，前后两个值的顺序无关，比如 left top和top left一样 */
+            /* background-position: right top; */
+            /* background-position只有一个参数，那么第二个参数默认是center*/
+            /* 水平居中，y周在上侧 */
+            background-position: top; 
+            /* 水平在右，y轴居中 */
+            background-position: right;
+            /* 背景图片位置 精确单位：x y */
+            /* background-position: 50px 50px; */
+            /* 背景平铺 */
+            /* background-repeat: repeat-x; */
+            /* background-repeat: repeat-y; */
+        }
+
+        h3 {
+            /* background-color: #f0f; */
+            width: 118px;
+            height: 40px;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 40px;
+            background-image: url('./images/icon.png');
+            /* background-size: cover; */
+            background-position: left center;
+            background-repeat: no-repeat;
+            text-indent: 1.5em;
+        }
+
+        body {
+            /* background-image: url('./images/bg.jpg');
+            background-repeat: no-repeat;
+            background-position: center top; */
+            /* 背景图片固定或者随内容滚动 */
+            /* background-attachment: fixed; */
+            /* background: black url('./images/bg.jpg') no-repeat fixed center top; */
+            background: rgba(0, 0, 0, .3);
+        }
+
+        .nav a {
+            display: inline-block;
+            width: 100px;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .nav .bg1 {
+            background-image: url('./images/icon.png');
+        }
+
+    </style>
+</head>
+<body>
+    <div></div>
+
+    <h3>
+        成长守护平台
+    </h3>
+    <div class="nav">
+        <a href="" class="bg1">五彩导航</a>
+        <a href="">五彩导航</a>
+        <a href="">五彩导航</a>
+        <a href="">五彩导航</a>
+        <a href="">五彩导航</a>
+        <a href="">五彩导航</a>
+        <a href="">五彩导航</a>
+        <a href="">五彩导航</a>
+        <a href="">五彩导航</a>
+    </div>
+    
+</body>
+</html>
