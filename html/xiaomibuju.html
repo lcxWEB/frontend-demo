@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小米布局</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .box {
+            width: 1226px;
+            height: 285px;
+            background-color: aqua;
+            /* 居中对齐 */
+            margin: 0 auto;
+        }
+
+        .box li {
+            width: 296px;
+            height: 285px;
+            background-color: red;
+            float: left;
+            margin-right: 14px;
+        }
+
+        /* 要注意权重问题 */
+        /* 第4个li不需要margin了 */
+        .box li:last-child {
+            margin-right: 0;
+        }
+
+    </style>
+</head>
+<body>
+
+    <ul class="box">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    
+</body>
+</html>

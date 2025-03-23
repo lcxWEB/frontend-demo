@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>网页布局的3种方式:普通流, 浮动,定位</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        /* 为什么需要浮动 */
+        /* 有很多布局效果，标准流无法完成，此时可以用浮动完成布局，因为浮动可以改变元素标签默认的排列方式 */
+        /* 浮动最典型的应用：可以让多个块级元素一行内显示 */
+        /* 网页布局第一准则：多个块级元素纵向排列找标准流，多个块级元素横向排列找浮动 */
+        /* 浮动属性用于创建浮动框，将其移动到一边，直到左边缘或右边缘触及包含块或另一个浮动框的边框 */
+        
+        /* div { */
+            /* display: inline-block; */
+            /* float: left;
+            width: 100px;
+            height: 100px;
+            background-color: aqua;
+            margin-right: 10px;
+        } */
+
+        /* .left,
+        .right {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+
+        .left {
+            float: left;
+        }
+
+        .right {
+            float: right;
+        } */
+
+        /* 浮动特性：1.浮动元素会脱离标准流(脱标) ：浮动的盒子不再保留原来的位置
+            2. 浮动的元素会一行内显示并且元素顶部对齐: 多个盒子浮动
+            3. 浮动的元素会具有行内元素的特性：
+            块级元素添加浮动后，它的大小根据内容决定
+        */
+
+        .box1 {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            float: left;
+        }
+
+        .box2 {
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+            /* float: left; */
+        }
+        /* 如果行内元素有了浮动，则不需要转换块级\行内块元素就可以直接给高度和宽度 */
+        span {
+            float: left;
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+        p {
+            float: right;
+            height: 300px;
+            background-color: blue;
+        }
+
+        /* 浮动元素经常和标准流父级搭配使用
+        为了约束浮动元素位置，网页布局一般采取的策略是：先用标准流的父元素排列上下位置，之后内部子元素采取浮动排列左右位置，符合网页布局第一准则
+        第二准则：先设置盒子的大小，之后设置盒子的位置
+        */ 
+        .box {
+            width: 1200px;
+            height: 460px;
+            background-color: pink;
+            margin: 0 auto;
+        }
+        .left {
+            height: 460px;
+            width: 230px;
+            background-color: red;
+            float: left;
+        }
+        .right {
+            height: 460px;
+            width: 970px;
+            background-color: blue;
+            /* float左和右都可以 */
+            float: right;
+        }
+
+        /* 注意点：
+           1. 浮动和标准流的父盒子搭配。先用标准流的父元素排列上下位置，之后内部子元素采取浮动排列左右位置
+           2. 一个元素浮动了，理论上其余的兄弟元素也要浮动
+            浮动的盒子只会影响浮动盒子后面的标准流，不会影响前面的标准流
+        */
+
+    </style>
+</head>
+<body>
+    <!-- <div class="left">
+        左青龙
+    </div>
+
+    <div class="right">
+        右白虎
+    </div> -->
+<!-- 
+    <div></div>
+    <div></div>
+    <div></div> -->
+
+    <!-- <div class="father">
+        <div class="son">
+
+        </div>
+    </div> -->
+    
+    <!-- <div class="box1">
+
+    </div>
+
+    <div class="box2">
+
+    </div>
+
+    <span>1</span>
+    <span>2</span>
+    <p>p</p> -->
+
+    <div class="box">
+        <div class="left">
+
+        </div>
+        <div class="right">
+
+        </div>
+    </div>
+
+</body>
+</html>
