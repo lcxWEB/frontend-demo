@@ -1,0 +1,193 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* 版型 */
+.w {
+    width: 1200px;
+    margin: auto;
+}
+
+body {
+    font-family: 'Microsoft Yahei', 'Arial', 'sans-serif';
+    font-size: 14px;
+    color: #666;
+    background: #f5f5f5;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.header {
+    height: 42px;
+    /* 层叠W里面的margin */
+    margin: 30px auto;
+}
+
+.logo {
+    float: left;
+    width: 198px;
+    height: 42px;
+    /* background: url(images/logo.png) no-repeat; */
+    
+}
+
+ /* 导航栏可以不用给宽度，将来可以继续添加其余问题，宽度根据内部块元素决定 */
+.nav {
+    float: left;
+    margin-left: 60px;
+}
+
+.nav ul li {
+    float: left;
+    margin: 0 15px;
+}
+/* 因为导航栏里面文字不一样多，所以最好给链接a左右padding撑开盒子，而不是指定宽度 */
+.nav ul li a {
+    display: block;
+    padding: 0 10px;
+    line-height: 42px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #050505
+}
+
+.nav ul li a:hover {
+    border-bottom: 2px solid #00a4ff;
+    color: #00a4ff;
+}
+
+.search {
+    float:left;
+    width: 412px;
+    height: 42px;
+    margin-left: 70px;
+}
+
+.search input {
+    /* 行内块元素默认有缝隙，加上浮动后，缝隙消失 */
+    float: left;
+    width: 345px;
+    height: 40px;
+    border: 1px solid #00a4ff;
+    border-right: none;
+    color: #bfbfbf;
+    font-size: 14px;
+    padding-left: 15px;
+}
+
+.search button {
+    float: left;
+    width: 50px;
+    height: 42px;
+    /* 去掉默认边框 */
+    border: none;
+    background: url(images/btn.png);
+} 
+
+.user {
+    float: right;
+    line-height: 42px;
+    margin-right: 30px;
+    font-size: 14px;
+    color: #666;
+}
+
+
+.banner {
+    height: 421px;
+    background-color: blue;
+}
+
+
+.banner .w {
+   height: 421px;
+   background: url(./images/banner.png) no-repeat top center;
+}
+
+.subnav {
+    float: left;
+    width: 190px;
+    height: 421px;
+    background: rgba(0, 0, 0, .3);
+    /* text-align: center; */
+}
+
+.subnav ul li {
+    padding: 0 20px;
+    height: 45px;
+    line-height: 45px;
+}
+
+.subnav ul li a {
+    font-size: 14px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.subnav ul li a:hover {
+    color: #00a4ff;
+}
+
+/* 右侧小箭头 */
+.subnav ul li a span {
+    float: right;
+}
+
+
+.course {
+    float: right;
+    width: 230px;
+    height: 300px;
+    /* 浮动的盒子不会有外边距合并问题 */
+    margin-top: 50px;
+    background-color: #fff;
+}
+
+.course h2 {
+    height: 48px;
+    background-color: #9bceea;
+    text-align: center;
+    line-height: 48px;
+    font-size: 18px;
+    color: #fff;
+}
+
+.bd {
+    padding: 0 20px;
+    background-color: #fff;
+}
+
+.bd ul li {
+    padding: 14px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.bd ul li h4 {
+    font-size: 16px;
+    color: #4e4e4e;
+}
+
+.bd ul li p {
+    font-size: 12px;
+    color: #a5a5a5;
+}
+
+.bd .more {
+    display: block;
+    height: 38px;
+    border: 1px solid #00a4ff;
+    margin-top: 5px;
+    /* margin-bottom: 5px; */
+    text-align: center;
+    line-height: 38px;
+    color: #00a4ff;
+    font-size: 16px;
+    font-weight: 700;
+}
