@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>定位</title>
+    <style>
+        /* 为什么需要定位
+            1. 浮动是可以让多个块级盒子一行没有缝隙排列显示，经常用于横向排列盒子
+            2. 定位则是可以让盒子自由的在某个盒子内移动位置或者固定在屏幕某个位置，并且可以压住其他盒子
+
+            定位是将盒子定位在某个位置，所以定位也是在摆放盒子，按照定位的方式移动盒子
+            定位 = 定位模式 + 边偏移
+            定位模式用于指定一个元素在文档中的定位方式 position: 
+                static（无定位，按照标准流特性摆放位置，很少用） | 
+                relative | 重要，1. 以自己原来的位置为基准进行定位；2. 原来在标准流的位置继续占有，后面的盒子不会受到影响.
+                相对定位没有脱标，典型应用是给绝对定位当父级
+                absolute |  在移动位置的时候，相对于它祖先元素来说的（拼爹型） 1. 如果没有祖先元素或祖先元素没有定位，则以浏览器为准定位（Document文档）；2. 如果祖先元素有定位（相对，绝对，固定定位），则以最近一级的有定位的祖先元素为参考点；3. 绝对定位脱标，不占有原来的位置
+                fixed | 
+                sticky
+            边偏移则决定了该元素的最终位置，边偏移有 
+            top | 相对于父元素上边线的距离
+             right | 相对于父元素下边线的距离
+             bottom | 相对于父元素左边线的距离
+              left 相对于父元素右边线的距离
+            子绝父相：子级使用绝对定位，父级则需要相对定位
+            1. 子级绝对定位，不会占有位置，可以放到父盒子里面的任何一个地方，不会影响其他的兄弟盒子
+            2. 父盒子需要加定位限制子盒子在父盒子内显示
+            3. 父盒子布局时，需要占有位置，因此父亲只能是相对定位
+
+         */
+         /* 相对定位 */
+        .box1 {
+            position: relative;
+            top: 100px;
+            left: 100px;
+            width: 200px;
+            height:200px;
+            background-color: red;
+            
+        }
+        .box2 {
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+        }
+
+        /* 绝对定位:没有祖先元素或祖先元素没有定位 */
+        .yeye {
+            position: relative; 
+            width: 800px;
+            height: 800px;
+            background-color: hotpink;
+            padding: 50px;
+        }
+        .father {
+            position: relative; 
+            width: 500px;
+            height: 500px;
+            background-color: lightgreen;
+        }
+        .son {
+            position: absolute;
+            /* top: 10px;
+            left: 10px; */
+            top: 100px;
+            right: 100px;
+            width: 200px;
+            height: 200px;
+            background-color: salmon;
+        }
+
+
+    </style>
+</head>
+<body>
+    <!-- <div class="box1">
+
+    </div>
+    <div class="box2">
+
+    </div> -->
+    <div class="yeye">
+        <div class="father">
+            <div class="son"></div>
+        </div>
+    </div>
+    
+   
+    
+</body>
+</html>
