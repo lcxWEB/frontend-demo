@@ -25,12 +25,26 @@
         for (let i = 0; i < arr.length; i++) {
             console.log(arr[i]);
         }
-        // 添加到结尾
+        // 添加到结尾，返回新数组长度
         let l = arr.push(6);
         console.log(arr);
         console.log(l);
         // 添加到开头
         arr.unshift(0);
+        console.log(arr);
+        // 删除最后一个, 返回删除的元素
+        arr.pop();
+        console.log(arr);
+        // 删除第一个, 返回删除的元素
+        arr.shift();
+        console.log(arr);
+        // 删除指定位置的元素，返回删除的元素
+        let newarr = arr.splice(1, 2);
+        console.log(arr);
+        console.log(newarr);
+        arr.splice(1, 1, 'a', 'b', 'c');
+        console.log(arr);
+        arr.splice(1);
         console.log(arr);
         
     </script>
