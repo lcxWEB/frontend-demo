@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>渲染柱形图</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .box {
+            display: flex;
+            width: 700px;
+            height: 300px;
+            border-left: 1px solid pink;
+            border-bottom: 1px solid pink;
+            margin: 50px auto;
+            justify-content: space-around;
+            align-items: flex-end;
+            text-align: center;
+        }    
+
+        .box > div {
+            display: flex;
+            width: 50px;
+            background-color: pink;
+            /* 把轴转过来 */
+            flex-direction: column;
+            justify-content: space-between
+        }
+
+        .box div span {
+            margin-top: -20px;
+        }
+
+        .box div h4 {
+            margin-bottom: -35px;
+            width: 70px;
+            margin-left: -10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div style = "height: 123px">
+            <span>123</span>
+            <h4>第1季度</h4>
+        </div>
+        <div style = "height: 156px">
+            <span>156</span>
+            <h4>第2季度</h4>
+        </div>
+        <div style = "height: 120px">
+            <span>120</span>
+            <h4>第3季度</h4>
+        </div>
+        <div style = "height: 210px">
+            <span>212</span>
+            <h4>第4季度</h4>
+        </div>
+        
+    </div>
+
+    <script>
+        // 1. 4次弹框效果
+        let arr = [];
+        for (let i = 0; i < 4; i++) {
+            arr.push(prompt(`请输入第${i}季度数据`));
+        }
+
+        // 2. 渲染柱形图
+        let box = document.querySelector('.box');
+        let divs = box.children;
+        for (let i = 0; i < divs.length; i++) {
+            divs[i].style.height = arr[i] + 'px';
+            divs[i].children[0].innerText = arr[i];
+        }
+    </script>
+    
+</body>
+</html>
