@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>定位</title>
     <style>
+        
         /* 为什么需要定位
             1. 浮动是可以让多个块级盒子一行没有缝隙排列显示，经常用于横向排列盒子
             2. 定位则是可以让盒子自由的在某个盒子内移动位置或者固定在屏幕某个位置，并且可以压住其他盒子
@@ -16,8 +17,19 @@
                 relative | 重要，1. 以自己原来的位置为基准进行定位；2. 原来在标准流的位置继续占有，后面的盒子不会受到影响.
                 相对定位没有脱标，典型应用是给绝对定位当父级
                 absolute |  在移动位置的时候，相对于它祖先元素来说的（拼爹型） 1. 如果没有祖先元素或祖先元素没有定位，则以浏览器为准定位（Document文档）；2. 如果祖先元素有定位（相对，绝对，固定定位），则以最近一级的有定位的祖先元素为参考点；3. 绝对定位脱标，不占有原来的位置
-                fixed | 
-                sticky
+                fixed | 1.以浏览器可视窗口为基准进行定位，跟父元素没有关系；2.不随滚动条滚动而滚动；3.脱标，不占有原来的位置
+                一种特殊的绝对定位
+                固定在版心右侧位置：小算法：
+                    1. 让固定定位的盒子left:50%,走到浏览器可视区（也可以看做版心）的一半位置
+                    2. 让固定定位的盒子margin-left:版心宽度的一半。多走版心宽度的一半位置
+
+                sticky 粘性定位，是相对定位和固定定位的混合
+                    1. 以浏览器的可视窗口为参照点移动元素（固定定位特点）
+                    2. 粘性定位占有原先的位置（相对定位特点） 
+                    3. 必须添加top，right，bottom，left其中一个属性，否则不会生效
+                    跟页面滚动搭配使用，兼容性差，不支持IE
+                    大部分这种效果通过JS实现 
+
             边偏移则决定了该元素的最终位置，边偏移有 
             top | 相对于父元素上边线的距离
              right | 相对于父元素下边线的距离
@@ -27,6 +39,7 @@
             1. 子级绝对定位，不会占有位置，可以放到父盒子里面的任何一个地方，不会影响其他的兄弟盒子
             2. 父盒子需要加定位限制子盒子在父盒子内显示
             3. 父盒子布局时，需要占有位置，因此父亲只能是相对定位
+
 
          */
          /* 相对定位 */
@@ -70,6 +83,38 @@
             background-color: salmon;
         }
 
+        .w {
+            width: 800px;
+            height: 500px;
+            background-color: lightblue;
+            margin: 0 auto;
+        }
+
+        .fixed {
+            position: fixed;
+            top: 50%;
+            /* 1. 走浏览器宽度的一半 */
+            left: 50%;
+            /* 利用margin，走版心盒子宽度的一半 */
+            margin-left: 405px;
+            width: 50px;
+            height: 50px;
+            background-color: yellow;
+        }
+
+        body {
+            height: 3000px;
+            background-color: aquamarine;
+        }
+
+        .nav {
+            position: sticky;
+            top: 0;
+            width: 800px;
+            height: 50px;
+            background-color: lightcoral;
+            margin: 100px auto;
+        }
 
     </style>
 </head>
@@ -87,6 +132,10 @@
     </div>
     
    
+    <div class="fixed">固定定位</div>
+    <div class="w">版心盒子，800像素</div>
     
+
+    <div class="nav">粘性定位</div>
 </body>
 </html>
