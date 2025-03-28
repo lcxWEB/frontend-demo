@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>对象类型</title>
+</head>
+<body>
+
+    <script>
+        let num1 = 10
+        let num2 = num1
+        num2 = 20
+        console.log(num1) // 10
+        console.log(num2) // 20
+        
+
+        let obj1 = {
+            age: 18,
+        };
+        let obj2 = obj1;
+        obj2.age = 19;
+        console.log(obj1.age); // 19
+        console.log(obj2.age); // 19
+
+
+        let phone = {
+            brand: 'Apple',
+            model: 'iPhone 12',
+            color: 'black',
+            price: 6999,
+            storage: '256G',
+            isOn: false,
+            call: function(nu) {
+                console.log('打电话给' + nu);
+            },
+            sendMsg: function() {
+                console.log('发短信');
+            },
+            powerOn: function() {
+                this.isOn = true;
+                console.log('开机');
+            },
+            powerOff: function() {
+                this.isOn = false;
+                console.log('关机');
+            }
+        }
+
+        console.log(phone.brand);
+        console.log(phone.model);
+        console.log(phone.color);
+        console.log(phone.price);
+        phone.price = 7999;
+        console.log(phone.price);
+        console.log(phone.storage);
+
+        phone.battery = '100%';
+        console.log(phone.battery);
+
+        phone.call(888);
+        phone.sendMsg();
+        phone.powerOn();
+        console.log(phone.isOn);
+        phone.powerOff();
+        console.log(phone.isOn);
+
+        // 删除
+        delete phone.storage;
+        console.log(phone.storage); // undefined
+        
+        phone['good-name'] = 'iPhone 12';
+        console.log(phone['good-name']);
+        // console.log(phone.good-name); // 报错 NaN
+
+        for (let key in phone) {
+            console.log(key);
+            // console.log(phone[key]);
+            console.log(key + ' : ' + phone[key]);
+        }
+        
+        let arr = ['a', 'b', 'c'];
+        for (let key in arr) {
+            console.log(key + ' : ' + arr[key]);
+        }
+
+        // PI是Math对象的属性
+        console.log(Math.PI);
+        console.log(Math.ceil(3.14));
+        console.log(Math.floor(3.14));
+        
+        console.log(Math.ceil(-3.14)); // -3
+        console.log(Math.floor(-3.14)); // -4
+
+        console.log(Math.round(3.14));
+        console.log(Math.round(3.54));
+        console.log(Math.round(3.50)); // 4
+        console.log(Math.round(3.51)); // 4
+        console.log(Math.round(3.49)); // 3
+        console.log(Math.round(-3.50)); // -3
+        console.log(Math.round(-3.51)); // -4
+        console.log(Math.round(-3.49)); // -3
+        
+        
+        console.log(Math.random());
+        console.log(Math.max(1, 2, 3, 4, 5));
+        console.log(Math.min(1, 2, 3, 4, 5));
+        
+        console.log(parseInt('3.14')); // 3
+        console.log(parseInt('3.14abc')); // 3
+        console.log(parseInt('abc3.14')); // NaN
+        console.log(parseFloat('3.14')); // 3.14
+
+        console.log(Math.floor(Math.random() * (10 + 1))); // 0-10
+        console.log(Math.floor(Math.random() * (10 - 5 + 1) + 5)); // 5-10
+        // 生成N-M之间的随机数
+        function randomNum(n, m) {
+            return Math.floor(Math.random() * (m - n + 1) + n);
+        }
+        console.log(randomNum(5, 10));
+        
+        // 生成0-2之间的随机数
+        let n = randomNum(0, 2)
+        console.log(arr[n]);
+        
+        
+    </script>
+    
+</body>
+</html>
