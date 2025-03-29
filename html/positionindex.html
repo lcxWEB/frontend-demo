@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position Index</title>
+    <style>
+        /* 使用定位布局时，可能出现盒子重叠的情况, 此时可以使用z-index来控制盒子的前后次序（z轴） */
+        /* z-index : 可以是正整数，负整数或0，默认是auto,数值越大，盒子越靠上；如果值相同，按照书写顺序，后来居上 */
+        /* 只有定位的盒子才有z-index属性 */
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        .xiongda {
+            /* top: 100px; */
+            left: 100px;
+            z-index: 1;
+            background-color: blue;
+        }
+        .xionger {
+            /* top: 150px; */
+            left: 50px;
+            z-index: 2;
+            background-color: green;
+        }
+        .qiangge {
+            /* top: 200px; */
+            left: 20px;
+            /* z-index: 3; */
+            background-color: yellow;
+        }
+
+        /* 如何让绝对定位的盒子居中 */
+        /* 1. 水平居中: left走父容器50% margin负值，往左边走自己盒子宽度的一半 */
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            position: absolute;
+            left: 50%;
+            top: 0;
+            margin-left: -100px;
+        }
+
+        /* 2. 垂直居中: top走父容器50% margin负值，往上边走自己盒子高度的一半 */
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            margin-top: -100px;
+        }
+
+        /* 3. 水平垂直居中: left走父容器50% margin负值，往左边走自己盒子宽度的一半 */
+        /* top走父容器50% margin负值，往上边走自己盒子高度的一半 */
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: -100px;
+            margin-top: -100px;
+        }
+
+        /* 定位特殊特性，于浮动类似*/
+        /* 行内元素添加绝对或固定定位，可以直接设置高度和宽度 */
+        span {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            left: 0;
+            top: 0;
+        }
+        /* 块级元素添加绝对或固定定位，如果不给宽度或高度，默认大小是内容的大小 */
+        .div1 {
+            position: absolute;
+            background-color: pink;
+            left: 200px;
+            top: 200px;
+        }
+
+        /* 浮动、固定定位、绝对定位的元素都不会触发外边距合并的问题 */
+        
+    </style>
+</head>
+<body>
+
+    <div class="box xiongda"></div>
+    <div class="box xionger"></div>
+    <div class="box qiangge"></div>
+
+    <span>111</span>
+    
+    <div class="div1">222</div>
+</body>
+</html>
