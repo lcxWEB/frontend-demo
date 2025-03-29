@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web API</title>
+    <style>
+        .wrapper {
+            width: 300px;
+            height: 300px;
+            background-color: pink;
+            padding: 50px 30px;
+            box-sizing: border-box;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+        }
+        
+    </style>
+</head>
+<body>
+    <input type="checkbox" name="sex" id="" checked>
+    <button disabled>点击</button>
+
+
+    <div data-id="1" data-spam="hello">1</div>
+    <div data-id="2">2</div>
+    <div data-id="3">3</div>
+    <div data-id="4">4</div>
+    <div data-id="5">5</div>
+
+    <div class="wrapper">
+        <strong>抽奖</strong>
+        <h1>一等奖：<span id="one">???</span></h1>
+        <h3>二等奖：<span id="two">???</span></h3>
+        <h5>三等奖：<span id="three">???</span></h5>
+
+    </div>
+
+    <div class="box">
+
+    </div>
+    <div class="box">
+
+    </div>
+
+    <div id="nav">
+
+    </div>
+
+    <ul>
+        <li>测试</li>
+        <li>测试</li>
+        <li>测试</li>
+        <li>测试</li>
+    </ul>
+
+    <img src="images/icon.png" alt="">
+
+    <input type="text" name="" id="" value="电脑">
+
+
+    <script>
+        // const语义化更好, const优先
+        // 数组的值和对象的值可以改变，但是不能改变数组和对象的地址
+        const arr = [1, 2, 3, 4, 5];
+        arr.push(6);
+        console.log(arr);
+        // arr = [1, 2, 3, 4, 5, 6]; // 报错, Uncaught TypeError: Assignment to constant variable.
+ 
+        const person = {
+            name: 'Tom',
+            age: 19,
+            address: "Beijing"
+        }
+
+        person.age = 20;
+        console.log(person);
+        // person = {
+        //     name: 'Jerry',
+        //     age: 20,
+        //     address: "Shanghai"
+        // } // 报错, Uncaught TypeError: Assignment to constant variable.
+
+        // JS = ECMAScript + BOM + DOM
+        // ECMAScript是JS的核心，是JS的语法规范
+
+        // Web API就是使用JS操作html和浏览器
+        // DOM树和DOM对象
+        // DOM树：Document Object Model 文档对象模型，用来操作网页内容 
+
+        // DOM树是一个树状结构，每个节点都是一个对象，每个对象都有属性和方法
+        // DOM对象：document对象，window对象，location对象，history对象，navigator对象
+        // document对象：代表整个文档，是DOM树的根节点，可以通过document对象操作整个文档
+        // 通过HTML标签选择
+        // const div = document.querySelector('div'); // dom对象
+        // console.log(div);
+        // console.dir(div);
+        // div.style.backgroundColor = 'red';
+        // div.style.width = '100px';
+        // div.style.height = '100px';
+        // 通过类名选择, 只选择第1个，HTMLElement对象
+        // const div = document.querySelector('.box'); // dom对象
+        // div.style.backgroundColor = 'red';
+        // div.style.width = '300px';
+        // div.style.height = '200px';
+        // 通过id选择
+        const nav = document.getElementById('nav');
+        nav.style.backgroundColor = 'green';
+        nav.style.width = '300px';
+        nav.style.height = '200px';
+        const allli = document.getElementsByTagName('li');
+        const allbox = document.getElementsByClassName('box');
+
+        // 获取第一个li
+        const li = document.querySelector('ul li:first-child');
+        li.style.backgroundColor = 'yellow';
+        li.style.width = '100px';
+        li.style.height = '50px';
+        // 获取最后一个li
+        const lastLi = document.querySelector('ul li:last-child');
+        lastLi.style.backgroundColor = 'pink';
+        lastLi.style.width = '100px';
+        lastLi.style.height = '50px';
+        // 获取所有li，伪数组，没有pop, push等方法
+        const lis = document.querySelectorAll('ul li');
+        console.log(lis);
+        console.dir(lis);
+        for (let i = 0; i < lis.length; i++) {
+            lis[i].style.backgroundColor = 'pink';
+            lis[i].style.width = '100px';
+            lis[i].style.height = '50px';
+            // lis[i].innerText = '文字内容';
+        }
+        // innerText和innerHTML
+        // innerText: 获取元素的文本内容
+        // innerHTML: 获取元素的html内容
+        // innerText和innerHTML都可以设置元素的内容
+        lastLi.innerText = '测试999';
+        lastLi.innerHTML = '<a href="http://www.baidu.com">百度</a>';
+        console.log(lastLi.innerText);
+        console.log(lastLi.innerHTML);
+
+        // 抽奖
+        const personArr = ['Tom', 'Jerry', 'Spike', 'Tyke', 'Tuffy'];
+        function randomPerson() {
+            const index = Math.floor(Math.random() * personArr.length);
+            const person = personArr[index];
+            personArr.splice(index, 1);
+            return person;
+        }
+        const one = document.querySelector('#one');
+        one.innerText = randomPerson();
+        const two = document.querySelector('#two');
+        two.innerText = randomPerson();
+        const three = document.querySelector('#three');
+        three.innerText = randomPerson();
+
+        const pic = document.querySelector('img');
+        pic.src = 'images/bg.jpg';
+        pic.width = 200;
+        // pic.height = 200;
+        pic.title = '背景';
+        pic.alt = '图片';
+
+        // 操作元素样式属性
+        // 通过style属性操作CSS
+        // const div = document.querySelector('div'); // dom对象
+        // console.log(div);
+        // console.dir(div);
+        // div.style.backgroundColor = 'red';
+        // div.style.width = '100px';
+        // div.style.height = '100px';
+
+        // 通过className属性操作CSS
+        // const div = document.querySelector('div'); // dom对象
+        // 换成新的类名，新值换旧值。需要注意是否有旧类名，看是否需要加上，比如原来有nav,现在加上box，那就是 nav box
+        // div.className = 'box';
+        // 通过classList属性操作CSS，HTML5新增的属性
+        const div1 = document.querySelector('div');
+        div1.classList.add('box');
+        div1.classList.remove('box');
+        // 切换一个类
+        div1.classList.toggle('box');
+
+        const input = document.querySelector('input');
+        console.log(input.value);
+        input.value = '手机';
+
+        const ipt = document.querySelector('input[type="checkbox"]');
+        console.log(ipt.checked);
+        ipt.checked = false;
+        console.log(ipt.checked);
+
+        const btn = document.querySelector('button');
+        console.log(btn.disabled);
+        btn.disabled = false; // 取消禁用
+
+
+        // 自定义属性
+        // 在HTML5中，通过data-自定义属性
+        // 在标签上一律以data开头
+        // 在DOM对象上一律以dataset对象方式获取
+        const oneDiv = document.querySelector('div');
+        console.log(oneDiv.dataset);
+        oneDiv.dataset.id = 100;
+        console.log(oneDiv.dataset.id);
+
+
+        // BOM：Browser Object Model 浏览器对象模型
+        // window对象：代表浏览器窗口，是BOM的根节点，可以通过window对象操作浏览器窗口
+        // location对象：代表浏览器的地址栏，可以通过location对象获取和设置浏览器的地址
+        // history对象：代表浏览器的历史记录，可以通过history对象操作浏览器的历史记录
+        // navigator对象：代表浏览器的信息，可以通过navigator对象获取浏览器的信息
+
+
+
+
+    </script>
+    
+</body>
+</html>

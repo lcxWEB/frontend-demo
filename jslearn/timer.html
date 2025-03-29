@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>定时器函数</title>
+</head> 
+<body>
+
+    <button id="btn" disabled>
+        已阅读用户协议(10s)
+    </button>
+
+    <script>
+        // 间歇函数
+        // setInterval() 方法可按照指定的周期（以毫秒计）来调用函数或计算表达式。
+        // setInterval() 方法会不停地调用函数，直到 clearInterval() 被调用或窗口被关闭。
+        // 语法：setInterval(function, milliseconds, param1, param2, ...)
+        // function: 必需。要调用的函数或要执行的代码串。
+        // milliseconds: 必需。周期性执行或调用 function 的时间间隔，以毫秒计。
+        // param1, param2, ...: 可选。传给 function 的参数列表。
+        // 返回值：一个表示定时器 ID 的值。这个值可以传递给 clearInterval() 方法来取消该定时器。
+        // setInterval(function() {
+        //     console.log('Hello World');
+        // }, 1000);
+        // 每个定时器都有独一无二的序号
+        // let n = setInterval(function() {
+        //     console.log('Hello World');
+        // }, 1000);
+        // console.log(n);
+        // clearInterval(n);
+        
+        // let m = setInterval(function() {
+        //     console.log('Hello JS');
+        // }, 1000);
+        // console.log(m);
+        // clearInterval(m);
+
+        // 倒计时
+        const btn = document.getElementById('btn')
+        btn.disabled = true;
+        let i = 10;
+        let n = setInterval(function() {
+            i--;
+            btn.innerText = `已阅读用户协议(${i}s)`;
+            if (i <= 0 ) {
+                clearInterval(n);
+                btn.innerText = `同意`;
+                btn.disabled = false;
+            }
+        }, 1000);
+
+</script>
+    
+</body>
+</html>
