@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>淘宝焦点图</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .tb-promo {
+            /* 相对定位不脱离标准流，直接通过margin居中 */
+            position: relative;
+            width: 520px;
+            height: 280px;
+            /* background-color: antiquewhite; */
+            margin: 100px auto;
+        }
+
+        .tb-promo img {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* 并集选择器 */
+        .prev,
+        .next {
+            /* 子绝父相 */
+            position: absolute;
+            /* 垂直居中 */
+            top: 50%;
+            margin-top: -15px;
+            width: 20px;
+            height: 30px;
+            background: rgba(0, 0, 0, 0.3);
+            text-align: center;
+            line-height: 30px;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .prev {
+            left: 0;
+            /* 圆角 */
+            border-top-right-radius: 15px;
+            border-bottom-right-radius: 15px;
+        }
+
+        .next {
+            /* 先左后右 */
+            right: 0;
+            /* 圆角 */
+            border-top-left-radius: 15px;
+            border-bottom-left-radius: 15px;
+        }
+        
+        .promo-nav {
+            /* 绝对定位 */
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            margin-left: -35px;
+            width: 70px;    
+            height: 13px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 7px;   
+        }
+
+        .promo-nav li {
+            float: left;
+            width: 8px;
+            height: 8px;
+            background-color: #fff;
+            border-radius: 50%;
+            margin: 3px;
+        }
+
+        .promo-nav .active {
+            background-color: #f40;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="tb-promo">
+        <img src="images/tb.jpg" alt="">
+        <!-- 左侧尖头 -->
+        <a href="#" class="prev"> &lt; </a>
+        <!-- 右侧尖头 -->
+        <a href="#" class="next"> &gt; </a>
+        <!-- 小圆点 -->
+        <ul class="promo-nav">
+            <li class="active"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+</body>
+</html>

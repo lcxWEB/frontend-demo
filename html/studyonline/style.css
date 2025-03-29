@@ -277,6 +277,8 @@ a {
     margin-right: 15px;
     background-color: #fff;
     margin-bottom: 15px;
+    /* 如果有定位的盒子，请慎用overflow:hidden因为它会隐藏多余的部分 */
+    /* overflow: hidden; */
 }
 
 .box-bd ul li em {

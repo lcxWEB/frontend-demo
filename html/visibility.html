@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>显示与隐藏元素</title>
+    <style>
+        /* 三种方式 */
+        /* display 显示隐藏 */
+        /* display：none 隐藏对象, 而且不占有位置 */
+        /* display：block 除了转换为块级元素之外，同时还有显示元素的意思 */
+        /* 应用极其广泛，搭配JS可以做很多网页特效 */
+        /* .peppa {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            display: none;
+        }
+        .george {
+            width: 100px;
+            height: 100px;
+            background-color: skyblue;
+        } */
+
+        /* visibility 显示隐藏 */
+        /* visibility：hidden 隐藏对象，但是占有位置 */
+        /* visibility：visible 显示对象 */
+        /* .peppa {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            visibility: hidden;
+        }
+        .george {
+            width: 100px;
+            height: 100px;
+            background-color: skyblue;
+        } */
+        /* overflow溢出显示隐藏，制定了如果内容溢出一个元素的框（超过其指定高度及宽度）时，会发生什么 */
+        /* overflow：hidden 隐藏溢出部分 */
+        /* overflow：visible 显示溢出部分 */
+        /* overflow：scroll 不管溢出与否都显示滚动条 */
+        /* overflow：auto 溢出的时候才显示滚动条 */
+        /* 如果有定位的盒子，请慎用overflow:hidden因为它会隐藏多余的部分 */
+        .peppa {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            /* overflow: hidden; */
+            /* overflow: visible; */
+            /* 不溢出也显示滚动条 */
+            /* overflow: scroll; */
+            /* auto溢出的时候才显示滚动条 */
+            overflow: auto;
+        }
+        .george {
+            width: 100px;
+            height: 100px;
+            background-color: skyblue;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div class="peppa">佩奇小猪佩奇小猪佩奇小猪佩奇小猪佩奇小猪佩奇小猪佩奇小猪佩奇小猪佩奇小猪佩奇小猪佩奇小猪佩奇小猪佩奇小猪佩奇小猪佩奇小猪</div>
+    <div class="george">乔治</div>
+
+</body>
+</html>
